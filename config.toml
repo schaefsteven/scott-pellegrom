@@ -1,11 +1,11 @@
-title = "Hugo-BS Temp"
+title = "Scott Pellegrom"
 baseURL = ""
 
 [params]
 primEmail = "info@example.com"
 primPhone = "(212) 345-6789"
-firstName = "John"
-lastName = "Smith"
+firstName = "Scott"
+lastName = "Pellegrom"
 
 [markup]
 

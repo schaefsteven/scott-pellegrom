@@ -1,16 +1,16 @@
 {{ define "main" }}
     {{"<!-- layouts/home.html -->" | safeHTML }}
-    <section class="prim-sec">
-        <div class="prim-cont">
-            <h1>Welcome to your new Hugo Site!</h1>
-            {{ range .Site.Sections }}
-                <h2>{{ .Title }}</h2>
-                <ul>
-                    {{ range .Pages }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                    {{ end }}
-                </ul>
-            {{ end }}
+    <section class="prim-sec pt-0">
+        <div class="home-hero">
+            <div class="overlay">
+                {{ $heroImg := resources.GetMatch "images/hero.webp" }}
+                {{ $heroImg := $heroImg.Resize "1920x webp" }}
+                <img 
+                    src="{{ $heroImg.RelPermalink }}" 
+                    alt="Scott Pellegrom playing the drums"
+                    class="behind-overlay"
+                >
+            </div>
         </div>
     </section>
     <script src="/js/invite-redirect.js"></script>

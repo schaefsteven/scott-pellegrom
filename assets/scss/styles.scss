@@ -4,8 +4,9 @@
 // 2. Include any default variable overrides here
 $body-color-dark: #FFF;
 
-$primary: blue;
-$secondary: orange;
+$primary: #B23B83;
+$secondary: #B2631D;
+$warm-black: #170F0C;
 
 $code-color: #48E91D;
 
@@ -80,12 +81,51 @@ $fa-font-path: '/node_modules/@fortawesome/fontawesome-free/webfonts';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 
-// Custom Fonts
+// Custom fonts
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap');
+
+.overlay {
+    position: relative;
+    width: 100%;
+    > * {
+        z-index: 10;
+        position: relative;
+    }
+    > .behind-overlay {
+        z-index: 1;
+        position: absolute;
+    }
+}
+
+.home-hero .overlay {
+    // Used to fix browsers that don't support svh
+    $vh-height: Max(90vh, Min(400px, 90vw));
+    $height: Max(Min(90svh, 150svw), Min(400px, 90svw));
+    min-height: $vh-height;
+    min-height: $height;
+    height: 90svh;
+    > .behind-overlay {
+        bottom: 0px;
+        left: 0px;
+        height: $vh-height;
+        height: $height;
+        max-width: none;
+        overflow-x: clip;
+        @media screen and (max-width: 768px) {
+            left: -200px;
+        }
+    }
+}
+
+.navbar-nav {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
 
 // start template styles ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .prim-sec {
-    @extend .py-md-5;
+    //@extend .py-md-5;
     @extend .py-2;
 }
 
@@ -116,6 +156,7 @@ body {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
+    background-color: $warm-black;
 }
 
 footer {
