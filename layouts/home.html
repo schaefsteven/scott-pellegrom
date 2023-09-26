@@ -1,8 +1,20 @@
 {{ define "main" }}
     {{"<!-- layouts/home.html -->" | safeHTML }}
     <section class="prim-sec pt-0">
-        <div class="home-hero">
-            <div class="overlay">
+        <div class="prim-cont home-hero">
+            <div class="overlay d-flex flex-column align-items-end p-3">
+                <div class="d-flex flex-column align-items-center">
+                    {{ $heroLogo := resources.GetMatch "images/logo*" }}
+                    <img class="hero-logo d-none d-md-block p-3" src="{{ $heroLogo.RelPermalink }}" alt="Scott Pellegrom">
+                    <ul class="flex-md-row navbar-nav nav-underline">
+                        <li class="nav-item btn btn-primary py-0 text-nowrap">
+                            <a class="nav-link fw-bold text-body" href="">Book a Lesson</a>
+                        </li>
+                        <li class="nav-item btn btn-primary py-0 text-nowrap">
+                            <a class="nav-link fw-bold text-body" href="">Courses on Gumroad</a>
+                        </li>
+                    </ul>
+                </div>
                 {{ $heroImg := resources.GetMatch "images/hero.webp" }}
                 {{ $heroImg := $heroImg.Resize "1920x webp" }}
                 <img 

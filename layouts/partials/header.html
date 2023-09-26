@@ -1,10 +1,9 @@
 <header class="bg-black p-md-1">
     <nav class="navbar navbar-expand-md">
         <div class="container-xxl d-flex align-items-center">
-            <a class="navbar-brand" href="/">
-                <span class="h2 p-2 m-0 text-body">
-                    {{ .Site.Title }}
-                </span>
+            <a class="navbar-brand d-md-none" href="/">
+                {{ $heroLogo := resources.GetMatch "images/logo*" }}
+                <img class="hero-logo" src="{{ $heroLogo.RelPermalink }}" alt="Scott Pellegrom">
             </a>
             <button 
                 class="navbar-toggler" 
@@ -17,7 +16,7 @@
             >
                 <span class="navbar-toggler-icon text-primary"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-underline">
                     <!-- 
                         To identify the current page, we use .Section, but list 
@@ -38,7 +37,7 @@
                             {{ $navIdentifier = .Page.Title }}
                         {{ end }}
                         {{ $active := eq $identifier $navIdentifier }}
-                        <li class="nav-item text-center">
+                        <li class="nav-item text-center mt-1">
                             <a 
                                 class="nav-link{{ if $active }} active{{ end }}"
                                 href="{{ .URL }}"
@@ -47,6 +46,24 @@
                             </a>
                         </li>
                     {{ end }}
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">Education</a>
+                    </li>
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">Video</a>
+                    </li>
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">Gigs</a>
+                    </li>
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">Blog</a>
+                    </li>
+                    <li class="nav-item text-center mt-1">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>

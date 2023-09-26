@@ -82,7 +82,7 @@ $fa-font-path: '/node_modules/@fortawesome/fontawesome-free/webfonts';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 
 // Custom fonts
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&display=swap');
 
 .overlay {
     position: relative;
@@ -119,7 +119,12 @@ $fa-font-path: '/node_modules/@fortawesome/fontawesome-free/webfonts';
 
 .navbar-nav {
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
+}
+
+.navbar-brand img { 
+    max-height: 40px;
 }
 
 // start template styles ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -156,7 +161,7 @@ body {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    background-color: $warm-black;
+    background-color: $black;
 }
 
 footer {
